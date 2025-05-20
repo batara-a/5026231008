@@ -1,0 +1,87 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #000;
+}
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fallback background */
+.video-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://sjc.microlink.io/WiyFysJXnJHPvN_XbK36vNMM_-QT-z348L-AlQg-DPVNzKImRC1QmMZvG18pbYRaS2mqqBPLNv6ovg40TUm2cw.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.verified-badge {
+    color: #00B6FF;
+    margin-left: 5px;
+}
+
+.link-item {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50px;
+    border: 0.5px solid #fff;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.link-item:hover {
+    transform: scale(1.02);
+    background-color: #fff;
+}
+
+.menu-dots {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+.link-item:hover .menu-dots {
+    opacity: 1;
+}
+
+.shop-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+}
+
+.shop-img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.link-item a span {
+    color: white !important;
+    transition: color 0.2s ease; /* efek transisi halus */
+  }
+  
+  /* Saat hover: teks hitam */
+  .link-item:hover a span {
+    color: black !important;
+  }
+  
+  /* Background hover (opsional) */
+  .link-item:hover {
+    background-color: white !important;
+  }
