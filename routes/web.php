@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +62,7 @@ Route::get('hello',[coba::class,'helloworld']);
 
 Route::get('dosen',[coba::class,'index']);
 
-Route::get('/pegawai/{nama}',[PegawaiController::class,'index']);
+//Route::get('/pegawai/{nama}',[PegawaiController::class,'index']);
 
 
 Route::get('/formulir', [PegawaiController::class, 'formulir']); //halaman isi formulir
@@ -72,3 +73,17 @@ Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //action 
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+
+// route pegawaiDB
+Route::get('/pegawai', [PegawaiDBController::class, 'index1']);
+
+
+Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
+
+Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
+
+Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
+
+Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
+
+Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
