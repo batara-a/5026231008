@@ -5,6 +5,7 @@ use App\Http\Controllers\coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\MejaDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +94,14 @@ Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 Route::get('/input', [PegawaiDBController::class, 'input']);
 
 Route::post('/proses', [PegawaiDBController::class, 'proses']);
+
+
+
+//route CRUD Meja
+Route::get('/meja', [MejaDBController::class, 'index']);
+Route::get('/meja/tambah', [MejaDBController::class, 'tambah']);
+Route::post('/meja/store', [MejaDBController::class, 'store']);
+Route::get('/meja/edit/{id}', [MejaDBController::class, 'edit']);
+Route::post('/meja/update', [MejaDBController::class, 'update']);
+Route::get('/meja/hapus/{id}', [MejaDBController::class, 'hapus']);
+Route::get('/meja/cari', [MejaDBController::class, 'cari']);
