@@ -105,3 +105,11 @@ Route::get('/meja/edit/{id}', [MejaDBController::class, 'edit']);
 Route::post('/meja/update', [MejaDBController::class, 'update']);
 Route::get('/meja/hapus/{id}', [MejaDBController::class, 'hapus']);
 Route::get('/meja/cari', [MejaDBController::class, 'cari']);
+
+
+route::get('/karyawanuas', [App\Http\Controllers\KaryawanDBController::class, 'index'])->name('karyawanuas.index');
+route::get('/karyawanuas/tambah', [App\Http\Controllers\KaryawanDBController::class, 'tambah'])->name('karyawanuas.tambah');
+route::post('/karyawanuas/store', [App\Http\Controllers\KaryawanDBController::class, 'store'])->name('karyawanuas.store');
+route::get('/karyawanuas/hapus/{karyawan}', [App\Http\Controllers\KaryawanDBController::class, 'hapus'])->name('karyawanuas.hapus');
+route::get('/karyawanuas/cari', [App\Http\Controllers\KaryawanDBController::class, 'cari'])->name('karyawanuas.cari');
+
