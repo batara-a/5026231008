@@ -10,7 +10,7 @@
                     <ul>@foreach ($errors->all() as $error) <li>{{ $error }}</li> @endforeach</ul>
                 </div>
             @endif
-            <form action="{{ route('karyawanuas.store') }}" method="POST">
+            <form action="/karyawanuas/store" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <label for="kodepegawai" class="col-sm-2 col-form-label">Kode Pegawai</label>
@@ -30,8 +30,8 @@
                 </div>
                 <div class="row">
                      <div class="col-sm-10 offset-sm-2">
-                         <button type="submit" class="btn btn-primary">SIMPAN</button>
-                         <a class="btn btn-secondary" href="{{ route('karyawanuas.index') }}">Kembali</a>
+                         <button type="submit" value="SIMPAN" class="btn btn-primary">SIMPAN</button>
+                         <a class="btn btn-secondary" href="/karyawanuas">Kembali</a>
                      </div>
                 </div>
             </form>

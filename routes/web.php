@@ -6,6 +6,9 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MejaDBController;
+use App\Http\Controllers\KaryawanDBController;
+use App\Http\Controllers\KeranjangDBController;
+use App\Http\Controllers\CounterDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,9 +110,21 @@ Route::get('/meja/hapus/{id}', [MejaDBController::class, 'hapus']);
 Route::get('/meja/cari', [MejaDBController::class, 'cari']);
 
 
-route::get('/karyawanuas', [App\Http\Controllers\KaryawanDBController::class, 'index'])->name('karyawanuas.index');
-route::get('/karyawanuas/tambah', [App\Http\Controllers\KaryawanDBController::class, 'tambah'])->name('karyawanuas.tambah');
-route::post('/karyawanuas/store', [App\Http\Controllers\KaryawanDBController::class, 'store'])->name('karyawanuas.store');
-route::get('/karyawanuas/hapus/{karyawan}', [App\Http\Controllers\KaryawanDBController::class, 'hapus'])->name('karyawanuas.hapus');
-route::get('/karyawanuas/cari', [App\Http\Controllers\KaryawanDBController::class, 'cari'])->name('karyawanuas.cari');
+route::get('/karyawanuas', [App\Http\Controllers\KaryawanDBController::class, 'index']);
+route::get('/karyawanuas/tambah', [App\Http\Controllers\KaryawanDBController::class, 'tambah']);
+route::post('/karyawanuas/store', [App\Http\Controllers\KaryawanDBController::class, 'store']);
+route::get('/karyawanuas/hapus/{karyawan}', [App\Http\Controllers\KaryawanDBController::class, 'hapus']);
+route::get('/karyawanuas/cari', [App\Http\Controllers\KaryawanDBController::class, 'cari']);
 
+
+//Route keranjangbelanja
+//Route tampilkan dan beli
+Route::get('/keranjang', [KeranjangDBController:: class, 'index']);
+Route::get('/keranjang/beli', [KeranjangDBController:: class, 'beli']);
+
+//store dan batal
+Route::post('/keranjang/store', [KeranjangDBController:: class, 'store']);
+Route::get('/keranjang/batal/{ID}', [KeranjangDBController:: class, 'batal']);
+
+//route counter
+Route::get('/counter',[CounterDBController::class, 'index']);

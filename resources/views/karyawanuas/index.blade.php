@@ -46,7 +46,7 @@
                     @endforelse
                 </tbody>
             </table>
-            <div class="mt-3"><a class="btn btn-primary" href="{{ route('karyawanuas.tambah') }}">Tambah Data</a></div>
+            <div class="mt-3"><a class="btn btn-primary" href="/karyawanuas/tambah">Tambah Data</a></div>
             <div class="d-flex justify-content-center mt-3">{!! $karyawanuas->links() !!}</div>
 
         </div>

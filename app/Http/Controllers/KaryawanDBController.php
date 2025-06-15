@@ -9,7 +9,7 @@ class KaryawanDBController extends Controller
 {
     public function index()
     {
-        $karyawanuas = DB::table('karyawan')->latest()->paginate(10); // Menampilkan 10 data per halaman
+        $karyawanuas = DB::table('karyawan')->paginate(10); // Menampilkan 10 data per halaman
         return view('karyawanuas.index', compact('karyawanuas'));
     }
 
@@ -20,15 +20,13 @@ class KaryawanDBController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'kodepegawai' => 'required|string|size:5|unique:karyawan,kodepegawai',
-            'namalengkap' => 'required|string|max:50',
-            'divisi'      => 'required|string|size:5',
-            'departemen'  => 'required|string|max:10',
-        ]);
-
-
-        return redirect()->route('karyawanuas.index')
+        DB::table('karyawan')->insert([
+        'kodepegawai' => $request->kodepegawai,
+		'namalengkap' => $request->namalengkap,
+		'divisi' => $request->divisi,
+        'departemen' => $request->departemen,
+	]);
+        return redirect('/karyawanuas')
                          ->with('success', 'Data karyawan berhasil ditambahkan.');
     }
 
@@ -38,7 +36,8 @@ class KaryawanDBController extends Controller
 	DB::table('karyawan')->where('kodepegawai',$id)->delete();
 
 	// alihkan halaman ke halaman karyawan
-	return redirect()->route('karyawanuas.index');
+	return redirect('/karyawanuas');
+
     }
 
      public function cari(Request $request)
