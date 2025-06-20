@@ -13,7 +13,7 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
         .jumbotron {
-            background-color: #ba2323;
+            background-color: #4291be;
             height: 100px;
         }
     </style>
@@ -27,25 +27,25 @@
     <nav class="navbar navbar-expand-sm bg-light">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">frontend</a>
+                <a class="nav-link" href="/frontend">frontend</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/pegawai">pegawai</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">tugas CRUD</a>
+                <a class="nav-link" href="/index1">tugas CRUD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">EAS</a>
+                <a class="nav-link" href="/eas">eas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Latihan 1</a>
+                <a class="nav-link" href="/karyawanuas">Latihan 1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Latihan 2</a>
+                <a class="nav-link" href="/keranjang">Latihan 2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Latihan 3</a>
+                <a class="nav-link" href="/counter">Latihan 3</a>
             </li>
         </ul>
     </nav>

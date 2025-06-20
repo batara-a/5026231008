@@ -9,6 +9,7 @@ use App\Http\Controllers\MejaDBController;
 use App\Http\Controllers\KaryawanDBController;
 use App\Http\Controllers\KeranjangDBController;
 use App\Http\Controllers\CounterDBController;
+use App\Http\Controllers\EasDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,3 +129,10 @@ Route::get('/keranjang/batal/{ID}', [KeranjangDBController:: class, 'batal']);
 
 //route counter
 Route::get('/counter',[CounterDBController::class, 'index']);
+
+
+
+//Route EAS
+Route::get('/eas',[EasDBController::class, 'index']);
+Route::get('/eas/tambah',[EasDBController::class, 'tambah']);
+Route::post('/eas/store',[EasDBController::class, 'store']);
